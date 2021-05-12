@@ -1,545 +1,541 @@
 <!DOCTYPE html>
-<html lang="en">
+<div lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="Reset.css">
-    <style>
-        .banner {
-            width: 1280px;
-            height: 578px;
-            background-image: url("https://i.ibb.co/kh05PNg/mv01.jpg");
-            background-size: cover;
-
-        }
-
-        /* <a href="https://ibb.co/nDf6Kxs"><img src="https://i.ibb.co/kh05PNg/mv01.jpg" alt="mv01" border="0"></a> */
-
-        nav {
-            width: 1280px;
-            height: 70px;
-            background-color: white;
-            opacity: .9;
-            display: flex;
-            flex-direction: row;
-            background-attachment: scroll;
-
-
-        }
-
-        .line {
-            margin: 25px 15px;
-        }
-
-
-        nav a {
-            /* padding: 10px; */
-            font-size: 17px;
-            color: black;
-            border-bottom: 4px solid transparent;
-            text-decoration: none;
-            font-family: "Segoe UI", "微軟正黑體", sans-serif;
-            font-weight: bold;
-            margin: 30px;
-            padding: 10px 0px 3px 0px;
-            /* padding:上 右 下 左; */
-
-        }
-
-        a.active {
-            margin: 30px;
-            text-decoration: none;
-            border-bottom: 4px solid black;
-        }
-
-        .guide {
-            margin: 25px 240px;
-
-        }
-
-        .language {
-            font-family: "Segoe UI", "微軟正黑體", sans-serif;
-
-        }
-
-        .language img {
-            width: 30px;
-            height: 30px;
-            margin: 20px;
-
-        }
-
-        /* .language ul {
-            border: #ccc 1px solid;
-            position: absolute;
-            z-index: 99;
-            left: -1px;
-            top: 100%;
-            min-width: 180px;
-        } */
-
-        /* .language ul li {
-            border-bottom: #ccc 1px solid;
-        }
-
-        .language ul li:last-child {
-            border-bottom: none;
-        } */
-
-        .slogan {
-            margin: 100px 0px 0px 180px;
-            width: 800px;
-            /* outline: 1px solid red; */
-        }
-
-        .slogan h1 {
-            font-size: 140px;
-            color: white;
-            font-family: "Segoe UI", "微軟正黑體", sans-serif;
-            font-weight: bolder;
-            /* margin: 0px 0px 20px 0px; */
-            padding: 0px 0px 20px 0px;
-
-            /* display: block;
-            margin: auto; */
-        }
-
-        .slogan p {
-            font-size: 40px;
-            color: white;
-            font-family: "Segoe UI", "微軟正黑體", sans-serif;
-            margin: 0px 0px 0px 8px;
-        }
-
-        .download {
-            display: flex;
-        }
-
-        .slogan img {
-            margin: 70px 0px 0px 8px;
-            width: 25px;
-            height: 25px;
-        }
-
-        .slogan h4 {
-            font-size: 15px;
-            color: white;
-            font-family: "Segoe UI", "微軟正黑體", sans-serif;
-            margin: 73px 0px 0px 10px;
-        }
-
-        .DL img {
-            display: inline;
-        }
-
-        .downloadimage img {
-            margin: 20px 0px 0px 8px;
-            width: 50px;
-            height: 50px;
-            border: 1px solid white;
-            /* display: inline; */
-            float: left;
-        }
-
-        .downloadimage1 img {
-            margin: 20px 0px 0px 8px;
-            width: 50px;
-            height: 50px;
-            border: 1px solid white;
-            /* display: inline; */
-            float: left;
-
-        }
-
-        .downloadimage2 img {
-            margin: 20px 0px 0px 8px;
-            width: 50px;
-            height: 50px;
-            border: 1px solid white;
-            /* display: inline; */
-            float: left;
-        }
-
-        .bear img {
-            display: none;
-        }
-
-        .bear1 img {
-            display: none;
-
-        }
-
-        .bear2 img {
-            display: none;
-        }
-
-        .downloadimage:hover .apple img {
-            display: none;
-        }
-
-        .downloadimage:hover .bear img {
-            display: block;
-        }
-
-        .downloadimage1:hover .apple1 img {
-            display: none;
-        }
-
-        .downloadimage1:hover .bear1 img {
-            display: block;
-        }
-
-        .downloadimage2:hover .apple2 img {
-            display: none;
-        }
-
-        .downloadimage2:hover .bear2 img {
-            display: block;
-        }
-
-        .words {
-            width: 1280px;
-            height: 400px;
-
-        }
-
-        .words h2 {
-            font-family: "Segoe UI", "微軟正黑體", sans-serif;
-            font-size: 80px;
-            font-weight: bolder;
-            margin: 70px auto 50px auto;
-            text-align: center;
-            /* margin:上 右 下 左; */
-        }
-
-        .words p {
-            font-family: "Segoe UI", "微軟正黑體", sans-serif;
-            font-size: 20px;
-            color: rgb(53, 51, 51);
-            text-align: center;
-            /* padding: 10px; */
-            line-height:30px;
-            /* margin: 10px auto ; */
-        }
-        .linenews{
-            width: 1280px;
-            height: 500px;
-            display: flex;  
-        }
-        .linenewswords{
-            width: 630px;
-            margin-top: 50px;
-        }
-        .linenewspic{
-            width: 630px;
-            border-left: 1px grey dashed;
-            /* justify-content: center; */
-        }
-        .linenewspic img{
-            width: 100%;
-        }
-        .box1{
-            width: 50px;
-            height: 50px;
-            border: 1px solid gray;
-            border-radius: 10px;
-            margin: 0px 0px 40px 80px;
-        }
-        .box1 p{
-            font-family: "Segoe UI", "微軟正黑體", sans-serif;
-            font-weight: bold;
-            font-size: 15px;
-            border-bottom: 2px green solid;
-            margin: 13px 3px 5px 3px;
-        }
-        .linenewswords h2{
-            font-family: "Segoe UI", "微軟正黑體", sans-serif;
-            font-size: 30px;
-            font-weight: bolder;
-            margin: 0px 0px 30px 80px;
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="Reset.css">
+        <style>
+            .frame {
+                width: 1280px;
+                overflow-x: hidden;
             }
-        .newsp p{
-            font-family: "Segoe UI", "微軟正黑體", sans-serif;
-            font-size: 17px;
-            /* padding: 0px 0px 20px 0px; */
-            /* letter-spacing:2px; */
-            line-height:30px;
-            margin: 0px 0px 30px 80px;
-        }
-        .linenewswords span{
-            color: green;
-        }
-        .box2{ 
-            width: 120px;
-            height: 50px;
-            border: 1px solid gray;
-            border-radius: 5px;
-            margin: 0px 0px 30px 80px;
-            padding: 10px 10px 10px 10px;
-            font-family: "Segoe UI", "微軟正黑體", sans-serif;
-            font-size: 15px;
-            text-decoration: none;
+
+            .banner {
+                width: 1280px;
+                height: 578px;
+                background-image: url("https://i.ibb.co/kh05PNg/mv01.jpg");
+                background-size: cover;
             }
-        .box2:hover{
-            background-color: green;
-            color: white;
-        }
-        .linemusic{
-            width: 1280px;
-            height: 600px;
-            display: flex; 
-        }
-        .linemusicwords{
-            width: 630px;
-            margin-top: 50px;
-            border-left: 1px grey dashed;
-        }
-        .linemusicpic{
-            width: 630px;
-            margin-top: 50px;
-        }
-        .linemusicpic img{
-            width: 100%;
-        }
-        .box3 img{
-            margin: 0px 0px 30px 80px;
-            width: 50px;
-            height: 50px;
-            border-radius: 10px;
-        }
-        .linemusicwords h2{
-            font-family: "Segoe UI", "微軟正黑體", sans-serif;
-            font-size: 30px;
-            font-weight: bolder;
-            margin: 0px 0px 30px 80px;
+
+            nav {
+                width: 1280px;
+                height: 70px;
+                background-color: white;
+                opacity: .9;
+                display: flex;
+                flex-direction: row;
             }
-        .musicp p{
-            font-family: "Segoe UI", "微軟正黑體", sans-serif;
-            font-size: 17px;
-            /* padding: 0px 0px 20px 0px; */
-            /* letter-spacing:2px; */
-            line-height:30px;
-            margin: 0px 0px 30px 80px;
-        }
-        .linemusicwords span{
-            color: green;
-        }
-        .box4{ width: 120px;
-            height: 50px;
-            border: 1px solid gray;
-            border-radius: 5px;
-            margin: 0px 0px 30px 80px;
-            padding: 10px 10px 10px 10px;
-            font-family: "Segoe UI", "微軟正黑體", sans-serif;
-            font-size: 15px;
-            text-decoration: none;
+
+            .line {
+                margin: 25px 15px;
             }
-        .box4:hover{
-            background-color: green;
-            color: white;
-        }
-        .LINECLOVA{
-            display: flex;
-        }
-        .LINECLOVAwords{
-            width: 630px;
-            margin-top: 50px;
-        }
-        .box5 img{
-            margin: 0px 0px 30px 80px;
-            width: 50px;
-            height: 50px;
-            border-radius: 10px;
-        }
-        .LINECLOVAwords h2{
-            font-family: "Segoe UI", "微軟正黑體", sans-serif;
-            font-size: 30px;
-            font-weight: bolder;
-            margin: 0px 0px 30px 80px;
-        }
-        .clovap span{
-            color: green;
-        }
-        .clovap p{
-            font-family: "Segoe UI", "微軟正黑體", sans-serif;
-            font-size: 17px;
-            /* padding: 0px 0px 20px 0px; */
-            /* letter-spacing:2px; */
-            line-height:30px;
-            margin: 0px 0px 30px 80px;
-        }
-        .clovapic{
-            width: 630px;
-            border-left: 1px grey dashed;
-            /* justify-content: center; */
-        }
-        .clovapic img{
-            width: 100%;
-        }
-        .MessengerAPP{
-            width: 1280px;
-            height: 1200px;
-            background-color: rgb(247, 247, 247);
-        }
-        .MessengerAPPwords h1{
-            font-family: "Segoe UI", "微軟正黑體", sans-serif;
-            font-size: 60px;
-            font-weight: bolder;
-            /* display: block; */
-            padding: 100px 0px 0px 0px;
-            margin: 0px auto 30px auto;
-            text-align: center;
-        }
-        /* .MessengerAPPwords span{
-            margin: 0px 0px 100px 0px;
-        } */
-        .MessengerAPPwords p{
-            font-family: "Segoe UI", "微軟正黑體", sans-serif;
-            font-size: 20px;
-            color: rgb(53, 51, 51);
-            text-align: center;
-            line-height:30px;
-            padding: 0px 0px 50px 0px;
-            /* margin: 10px auto ; */
-        }
-        .appscontainer {
+
+
+            nav a {
+                font-size: 17px;
+                color: black;
+                border-bottom: 4px solid transparent;
+                text-decoration: none;
+                font-family: "Segoe UI", "微軟正黑體", sans-serif;
+                font-weight: bold;
+                margin: 30px;
+                padding: 10px 0px 3px 0px;
+            }
+
+            a.active {
+                margin: 30px;
+                text-decoration: none;
+                border-bottom: 4px solid black;
+            }
+
+            .guide {
+                margin: 25px 240px;
+
+            }
+
+            .slogan {
+                margin: 100px 0px 0px 180px;
+                width: 800px;
+            }
+
+            .slogan h1 {
+                font-size: 140px;
+                color: white;
+                font-family: "Segoe UI", "微軟正黑體", sans-serif;
+                font-weight: bolder;
+                padding: 0px 0px 20px 0px;
+            }
+
+            .slogan p {
+                font-size: 40px;
+                color: white;
+                font-family: "Segoe UI", "微軟正黑體", sans-serif;
+                margin: 0px 0px 0px 8px;
+            }
+
+            .download {
+                display: flex;
+            }
+
+            .slogan img {
+                margin: 70px 0px 0px 8px;
+                width: 25px;
+                height: 25px;
+            }
+
+            .slogan h4 {
+                font-size: 15px;
+                color: white;
+                font-family: "Segoe UI", "微軟正黑體", sans-serif;
+                margin: 73px 0px 0px 10px;
+            }
+
+            .DL img {
+                display: inline;
+            }
+
+            .downloadimage img {
+                margin: 20px 0px 0px 8px;
+                width: 50px;
+                height: 50px;
+                border: 1px solid white;
+                float: left;
+            }
+
+            .downloadimage1 img {
+                margin: 20px 0px 0px 8px;
+                width: 50px;
+                height: 50px;
+                border: 1px solid white;
+                float: left;
+            }
+
+            .downloadimage2 img {
+                margin: 20px 0px 0px 8px;
+                width: 50px;
+                height: 50px;
+                border: 1px solid white;
+                float: left;
+            }
+
+            .bear img {
+                display: none;
+            }
+
+            .bear1 img {
+                display: none;
+
+            }
+
+            .bear2 img {
+                display: none;
+            }
+
+            .downloadimage:hover .apple img {
+                display: none;
+            }
+
+            .downloadimage:hover .bear img {
+                display: block;
+            }
+
+            .downloadimage1:hover .apple1 img {
+                display: none;
+            }
+
+            .downloadimage1:hover .bear1 img {
+                display: block;
+            }
+
+            .downloadimage2:hover .apple2 img {
+                display: none;
+            }
+
+            .downloadimage2:hover .bear2 img {
+                display: block;
+            }
+
+            .words {
+                width: 1280px;
+                height: 400px;
+
+            }
+
+            .words h2 {
+                font-family: "Segoe UI", "微軟正黑體", sans-serif;
+                font-size: 80px;
+                font-weight: bolder;
+                margin: 70px auto 50px auto;
+                text-align: center;
+                /* margin:上 右 下 左; */
+            }
+
+            .words p {
+                font-family: "Segoe UI", "微軟正黑體", sans-serif;
+                font-size: 20px;
+                color: rgb(53, 51, 51);
+                text-align: center;
+                line-height: 30px;
+            }
+
+            .linenews {
+                width: 1280px;
+                height: 500px;
+                display: flex;
+            }
+
+            .linenewswords {
+                width: 630px;
+                margin-top: 50px;
+            }
+
+            .linenewspic {
+                width: 630px;
+                border-left: 1px grey dashed;
+            }
+
+            .linenewspic img {
+                width: 100%;
+            }
+
+            .box1 {
+                width: 50px;
+                height: 50px;
+                border: 1px solid gray;
+                border-radius: 10px;
+                margin: 0px 0px 40px 80px;
+            }
+
+            .box1 p {
+                font-family: "Segoe UI", "微軟正黑體", sans-serif;
+                font-weight: bold;
+                font-size: 15px;
+                border-bottom: 2px green solid;
+                margin: 13px 3px 5px 3px;
+            }
+
+            .linenewswords h2 {
+                font-family: "Segoe UI", "微軟正黑體", sans-serif;
+                font-size: 30px;
+                font-weight: bolder;
+                margin: 0px 0px 30px 80px;
+            }
+
+            .newsp p {
+                font-family: "Segoe UI", "微軟正黑體", sans-serif;
+                font-size: 17px;
+                line-height: 30px;
+                margin: 0px 0px 30px 80px;
+            }
+
+            .linenewswords span {
+                color: green;
+            }
+
+            .box2 {
+                width: 120px;
+                height: 50px;
+                border: 1px solid gray;
+                border-radius: 5px;
+                margin: 0px 0px 30px 80px;
+                padding: 10px 10px 10px 10px;
+                font-family: "Segoe UI", "微軟正黑體", sans-serif;
+                font-size: 15px;
+                text-decoration: none;
+            }
+
+            .box2:hover {
+                background-color: green;
+                color: white;
+            }
+
+            .linemusic {
+                width: 1280px;
+                height: 600px;
+                display: flex;
+            }
+
+            .linemusicwords {
+                width: 630px;
+                margin-top: 50px;
+                border-left: 1px grey dashed;
+            }
+
+            .linemusicpic {
+                width: 630px;
+                margin-top: 50px;
+            }
+
+            .linemusicpic img {
+                width: 100%;
+            }
+
+            .box3 img {
+                margin: 0px 0px 30px 80px;
+                width: 50px;
+                height: 50px;
+                border-radius: 10px;
+            }
+
+            .linemusicwords h2 {
+                font-family: "Segoe UI", "微軟正黑體", sans-serif;
+                font-size: 30px;
+                font-weight: bolder;
+                margin: 0px 0px 30px 80px;
+            }
+
+            .musicp p {
+                font-family: "Segoe UI", "微軟正黑體", sans-serif;
+                font-size: 17px;
+                line-height: 30px;
+                margin: 0px 0px 30px 80px;
+            }
+
+            .linemusicwords span {
+                color: green;
+            }
+
+            .box4 {
+                width: 120px;
+                height: 50px;
+                border: 1px solid gray;
+                border-radius: 5px;
+                margin: 0px 0px 30px 80px;
+                padding: 10px 10px 10px 10px;
+                font-family: "Segoe UI", "微軟正黑體", sans-serif;
+                font-size: 15px;
+                text-decoration: none;
+            }
+
+            .box4:hover {
+                background-color: green;
+                color: white;
+            }
+
+            .LINECLOVA {
+                display: flex;
+            }
+
+            .LINECLOVAwords {
+                width: 630px;
+                margin-top: 50px;
+            }
+
+            .box5 img {
+                margin: 0px 0px 30px 80px;
+                width: 50px;
+                height: 50px;
+                border-radius: 10px;
+            }
+
+            .LINECLOVAwords h2 {
+                font-family: "Segoe UI", "微軟正黑體", sans-serif;
+                font-size: 30px;
+                font-weight: bolder;
+                margin: 0px 0px 30px 80px;
+            }
+
+            .clovap span {
+                color: green;
+            }
+
+            .clovap p {
+                font-family: "Segoe UI", "微軟正黑體", sans-serif;
+                font-size: 17px;
+                line-height: 30px;
+                margin: 0px 0px 30px 80px;
+            }
+
+            .clovapic {
+                width: 630px;
+                border-left: 1px grey dashed;
+            }
+
+            .clovapic img {
+                width: 100%;
+            }
+
+            .MessengerAPP {
+                width: 1280px;
+                height: 1200px;
+                background-color: rgb(247, 247, 247);
+            }
+
+            .MessengerAPPwords h1 {
+                font-family: "Segoe UI", "微軟正黑體", sans-serif;
+                font-size: 60px;
+                font-weight: bolder;
+                padding: 100px 0px 0px 0px;
+                margin: 0px auto 30px auto;
+                text-align: center;
+            }
+
+            .MessengerAPPwords span {
+                margin: 0px 0px 100px 0px;
+            }
+
+            .MessengerAPPwords p {
+                font-family: "Segoe UI", "微軟正黑體", sans-serif;
+                font-size: 20px;
+                color: rgb(53, 51, 51);
+                text-align: center;
+                line-height: 30px;
+                padding: 0px 0px 50px 0px;
+            }
+
+            .appscontainer {
                 width: 1280px;
                 margin: auto;
                 display: flex;
                 flex-wrap: wrap;
             }
 
-        .appsitem {
-            width: 350px;
-            margin: auto;
-            border: 2px solid none;
-            box-sizing: border-box;
-            flex-wrap: wrap;
-        }
+            .appsitem {
+                width: 350px;
+                margin: auto;
+                border: 2px solid none;
+                box-sizing: border-box;
+                flex-wrap: wrap;
+            }
 
-        .appsitem .text {
-            padding: 10px;
-        }
-        .text h3{
-            font-family: "Segoe UI", "微軟正黑體", sans-serif;
-            font-size: 25px;
-            font-weight: bold;
-            text-align: center;
-            margin: 20px 0px 20px 0px;
-        }
+            .appsitem .text {
+                padding: 10px;
+            }
 
-        .text p{
-            font-family: "Segoe UI", "微軟正黑體", sans-serif;
-            font-size: 13px;
-            text-align: center;
-            line-height:20px;
-            
-        }
+            .text h3 {
+                font-family: "Segoe UI", "微軟正黑體", sans-serif;
+                font-size: 25px;
+                font-weight: bold;
+                text-align: center;
+                margin: 20px 0px 20px 0px;
+            }
 
-        .appsitem img {
-            width: 100%;
-        }
-        .banner2{
-            width: 1280px;
-            height: 300px;
-            background-image: url("https://i.ibb.co/5czshjV/359aa04b2b1c3f542b3ef32ac68889db.png");
-            background-size: cover;
-            display: flex;
-        }
-        .banner2 h2{
-            font-size: 50px;
-            color: white;
-            font-family: "Segoe UI", "微軟正黑體", sans-serif;
-            font-weight: bolder;
-            text-align: center;
-            margin: auto;
-        }
-        .Services{
-            width: 1280px;
-            height: 200px;
-            background-color: rgb(247, 247, 247);
-        }
-        .Services h3{
-            font-size: 60px;
-            font-family: "Segoe UI", "微軟正黑體", sans-serif;
-            font-weight: bolder;
-            text-align: center;
-            padding: 120px 0px 0px 0px;
-        }
-        .Servicescontainer {
+            .text p {
+                font-family: "Segoe UI", "微軟正黑體", sans-serif;
+                font-size: 13px;
+                text-align: center;
+                line-height: 20px;
+
+            }
+
+            .appsitem img {
+                width: 100%;
+            }
+
+            .banner2 {
                 width: 1280px;
-                /* margin: auto; */
+                height: 300px;
+                background-image: url("https://i.ibb.co/5czshjV/359aa04b2b1c3f542b3ef32ac68889db.png");
+                background-size: cover;
+                display: flex;
+            }
+
+            .banner2 h2 {
+                font-size: 50px;
+                color: white;
+                font-family: "Segoe UI", "微軟正黑體", sans-serif;
+                font-weight: bolder;
+                text-align: center;
+                margin: auto;
+            }
+
+            .Services {
+                width: 1280px;
+                height: 200px;
+                background-color: rgb(247, 247, 247);
+            }
+
+            .Services h3 {
+                font-size: 60px;
+                font-family: "Segoe UI", "微軟正黑體", sans-serif;
+                font-weight: bolder;
+                text-align: center;
+                padding: 120px 0px 0px 0px;
+            }
+
+            .Servicescontainer {
+                width: 1280px;
                 background-color: rgb(247, 247, 247);
                 display: flex;
                 flex-wrap: wrap;
             }
-        .Servicesitem:hover{
-        background-color:gray;
-        opacity: 0.8;
-        }
-     
-        .Servicesitem{
-            width: 320px;
-            height: 400px;
-            background-color:white;
-            margin: 10px;
-            box-sizing: border-box;
-        }
-        .Servicesitem img {
-            width: 70px;
-            height: 70px;
-            margin: 30px 30px 30px 40px;
-            border-radius: 10px;
-        }
-        .Servicesitem h3{
-            /* padding: 10px; */
-            display: inline-block;
-            margin: 0px 30px 20px 40px;
-        }
-        .Servicesitem p{
-            font-size: 14px;
-            font-family: "Segoe UI", "微軟正黑體", sans-serif;
-            display: inline-block;
-            margin: 0px 30px 30px 40px;
-            text-align: start;
-        }
-        .dot{
-            font-size: 30px;
-            font-family: "Segoe UI", "微軟正黑體", sans-serif;
-            display: inline-block;
-            margin: 60px 50px 20px 5px;
-            text-align: start;
-        }
-        .grayspace{
-            background-color: rgb(247, 247, 247);
-            width: 1280px;
-            height: 200px;
-        }
-        .button{
-            width: 1280px;
-            height: 100px;
-        }
-        .button img{
-            width: 50px;
-            height: 50px;
-            border-radius: 10px;
-            margin: 20px;
-        }
-        .link img{
-            width: 30px;
-            height: 30px;
-            margin: 10px;
-        }
-        .link{
-            font-size: 15px;
-            font-family: "Segoe UI", "微軟正黑體", sans-serif;
-            text-decoration: none;
-            padding: 5px;
-        }
-        .foot{
+
+            .Servicesitem:hover {
+                background-color: gray;
+                opacity: 0.8;
+            }
+
+            .Servicesitem {
+                width: 320px;
+                height: 400px;
+                background-color: white;
+                margin: 10px;
+                box-sizing: border-box;
+            }
+
+            .Servicesitem img {
+                width: 70px;
+                height: 70px;
+                margin: 30px 30px 30px 40px;
+                border-radius: 10px;
+            }
+
+            .Servicesitem h3 {
+                display: inline-block;
+                margin: 0px 30px 20px 40px;
+            }
+
+            .Servicesitem p {
+                font-size: 14px;
+                font-family: "Segoe UI", "微軟正黑體", sans-serif;
+                display: inline-block;
+                margin: 0px 30px 30px 40px;
+                text-align: start;
+            }
+
+            .dot {
+                font-size: 30px;
+                font-family: "Segoe UI", "微軟正黑體", sans-serif;
+                display: inline-block;
+                margin: 60px 50px 20px 5px;
+                text-align: start;
+            }
+
+            .grayspace {
+                background-color: rgb(247, 247, 247);
+                width: 1280px;
+                height: 200px;
+            }
+
+            .button {
+                width: 1280px;
+                height: 100px;
+            }
+
+            .button img {
+                width: 50px;
+                height: 50px;
+                border-radius: 10px;
+                margin: 20px;
+            }
+
+            .link img {
+                width: 30px;
+                height: 30px;
+                margin: 10px;
+            }
+
+            .link {
+                font-size: 15px;
+                font-family: "Segoe UI", "微軟正黑體", sans-serif;
+                text-decoration: none;
+                padding: 5px;
+            }
+
+            /* .foot{
             border-top: 1px gray solid;
         }
         .foot a{
@@ -547,118 +543,94 @@
             display: inline-block;
             margin: 20px;
             padding: 10px;
-        }
+        } */
+        </style>
+    </head>
 
-    </style>
-</head>
-
-<body>
-    <div class="banner">
-        <!-- <div class="lineicon">  -->
     
-        <nav>
-            <div class="line"> <a class="lineicon" href="#"><img src="line official/icon-title-pc.png"></a></div>
+        <div class="frame">
+            <div class="banner">
+                <!-- <div class="lineicon">  -->
 
-            <div class="guide">
-                <a class="active" href="#">Life on LINE</a>
-                <a href="#">Messenger APP</a>
-                <a href="#">Services</a>
-            </div>
-            <div class="language"> <a href="#"><img src="line official/3bc668c7fe27caab893e52a09dcb92df.png"></a>
-                <!-- <ul>
-                    <li><a href="#">TW</a>
-                    </li>
-                    <li><a href="#">EN</a>
-                    </li>
-                    <li><a href="#">JP</a>
-                    </li>
-                    <li><a href="#">TH</a>
-                    </li>
-                    <li><a href="#">KR</a>
-                    </li>
-                    <li><a href="#">ID</a>
-                    </li>
-                </ul> -->
-            </div>
-            <!-- <ul class="language">
-                <li>TW</li>
-                <li>EN</li>
-                <li>JP</li>
-                <li>TH</li>
-                <li>KR</li>
-                <li>ID</li>
-            </ul> -->
+                <nav>
+                    <div class="line"> <a class="lineicon" href="#"><img src="line official/icon-title-pc.png"></a>
+                    </div>
 
-        </nav>
-        <div class="slogan">
-            <h1>Life on LINE</h1>
-            <p>LINE—always at your side.</p>
-            <div class="download">
-                <img src="line official/icon-line-w.png">
-                <h4>Download</h4>
-            </div>
-            <div class="DL"></div>
-            <div class="downloadimage">
-                <a class="apple" href="#"><img src="line official/600px-Vectorized_Apple_gray_logo.svg.png"></a>
-                <a class="bear" href="#"><img src="line official/b947a9e209106576b6e91852da859b10.png"></a>
+                    <div class="guide">
+                        <a class="active" href="#">Life on LINE</a>
+                        <a href="#">Messenger APP</a>
+                        <a href="#">Services</a>
+                    </div>
+                </nav>
+                <div class="slogan">
+                    <h1>Life on LINE</h1>
+                    <p>LINE—always at your side.</p>
+                    <div class="download">
+                        <img src="line official/icon-line-w.png">
+                        <h4>Download</h4>
+                    </div>
+                    <div class="DL"></div>
+                    <div class="downloadimage">
+                        <a class="apple" href="#"><img src="line official/600px-Vectorized_Apple_gray_logo.svg.png"></a>
+                        <a class="bear" href="#"><img src="line official/b947a9e209106576b6e91852da859b10.png"></a>
 
+                    </div>
+                    <div class="downloadimage1"> <a class="apple1" href="#"><img
+                                src="line official/600px-Vectorized_Apple_gray_logo.svg.png"></a>
+                        <a class="bear1" href="#"><img src="line official/b947a9e209106576b6e91852da859b10.png"></a>
+                    </div>
+                    <div class="downloadimage2">
+                        <a class="apple2" href="#"><img
+                                src="line official/600px-Vectorized_Apple_gray_logo.svg.png"></a>
+                        <a class="bear2" href="#"><img src="line official/b947a9e209106576b6e91852da859b10.png"></a>
+                    </div>
+                </div>
             </div>
-            <div class="downloadimage1"> <a class="apple1" href="#"><img
-                        src="line official/600px-Vectorized_Apple_gray_logo.svg.png"></a>
-                <a class="bear1" href="#"><img src="line official/b947a9e209106576b6e91852da859b10.png"></a>
+            <div class="words">
+                <h2>Life on LINE</h2>
+                <p>More than just a messenger app.<br>
+                    LINE is new level of communication, and the very infrastructure of your life.</p>
             </div>
-            <div class="downloadimage2">
-                <a class="apple2" href="#"><img src="line official/600px-Vectorized_Apple_gray_logo.svg.png"></a>
-                <a class="bear2" href="#"><img src="line official/b947a9e209106576b6e91852da859b10.png"></a>
+            <div class="linenews">
+                <div class="linenewswords">
+                    <div class="box1">
+                        <p>NEWS</p>
+                    </div>
+                    <h2>LINE NEWS</h2>
+                    <div class="newsp">
+                        <p><span>Keep current with<br>
+                                the latest news on LINE.</span><br>
+                            LINE NEWS is the most popular news content curation<br>
+                            service in Asia and aims to deliver valuable content that<br>
+                            enrich your everyday life.</p>
+                    </div>
+                    <a class="box2" href="#">More detials</a>
+                </div>
+                <div class="linenewspic">
+                    <img src="line official/796892fc01fdbaf67070f2885be03eb3.png">
+                </div>
             </div>
-        </div>
-        <!-- <div class="downloadimage">
-                <a class="apple"href="#"><img src="line official/600px-Vectorized_Apple_gray_logo.svg.png"></a>
-                <a class="apple1"href="#"><img src="line official/600px-Vectorized_Apple_gray_logo.svg.png"></a>
-                <a class="apple2"href="#"><img src="line official/600px-Vectorized_Apple_gray_logo.svg.png"></a>
-        </div> -->
-    </div>
-    <div class="words">
-        <h2>Life on LINE</h2>
-        <p>More than just a messenger app.<br>
-            LINE is new level of communication, and the very infrastructure of your life.</p>
-    </div>
-    <div class="linenews">
-        <div class="linenewswords">
-            <div class="box1">
-                <p>NEWS</p> 
+            <div class="linemusic">
+                <div class="linemusicpic">
+                    <img src="line official/4626dfdba294bb0383776e36e67ff1d7.png">
+                </div>
+                <div class="linemusicwords">
+                    <div class="box3">
+                        <img src="line official/0c9600488806488611a6156a60450edf.png">
+                    </div>
+                    <h2>LINE MUSIC</h2>
+                    <div class="musicp">
+                        <p><span>Listen, Watch and
+                                <br>
+                                Sing along.</span><br>
+                            LINE MUSIC is a music streaming service in Japan with<br>
+                            over 70 million songs, both Japanese and foreign. Users<br>
+                            can listen to trending songs, watch music videos and enjoy<br>the sing-along feature.</p>
+                    </div>
+                    <a class="box4" href="#"> More detials</a>
+                </div>
             </div>
-            <h2>LINE NEWS</h2>
-            <div class="newsp"><p><span>Keep current with<br> 
-                the latest news on LINE.</span><br>
-                LINE NEWS is the most popular news content curation<br> 
-                service in Asia and aims to deliver valuable content that<br>
-                enrich your everyday life.</p></div>
-            <a class="box2" href="#">More detials</a>
-        </div>      
-        <div class="linenewspic">
-            <img src="line official/796892fc01fdbaf67070f2885be03eb3.png" >
-        </div>
-    </div>
-    <div class="linemusic">
-        <div class="linemusicpic">
-            <img src="line official/4626dfdba294bb0383776e36e67ff1d7.png">
-        </div>
-        <div class="linemusicwords">
-            <div class="box3">
-                <img src="line official/0c9600488806488611a6156a60450edf.png"> 
-            </div>
-            <h2>LINE MUSIC</h2>
-            <div class="musicp"><p><span>Listen, Watch and 
-                <br> 
-                Sing along.</span><br>
-                LINE MUSIC is a music streaming service in Japan with<br> 
-                over 70 million songs, both Japanese and foreign. Users<br>
-                can listen to trending songs, watch music videos and enjoy<br>the sing-along feature.</p></div>
-            <a class="box4" href="#"> More detials</a>
-        </div>      
-    </div>
-    <div class="LINECLOVA">
+            <!-- <div class="LINECLOVA">
         <div class="LINECLOVAwords">
             <div class="box5">
                 <img src="line official/25bb1dced73b4e65719b9d9e7906b1ca.png" >
@@ -674,129 +646,155 @@
         <div class="clovapic">
             <img src="line official/1c0fd7d2b814a12cc03bcf5277e4d819.png">
         </div>
-    </div>
-    <div class="MessengerAPP">
-        <div class="MessengerAPPwords">
-            <h1><span>Messenger APP</span></h1>
-            <p>New communication app which allows you to make FREE voice calls and<br>
-                send FREE messages whenever and wherever you are, 24 hours a day!</p></div>
-        <div class="appscontainer">
-            <div class="appsitem">
-                <img src="line official/49fae47e154a66bfea7bfa3559e04483.png">
-                <div class="text">
-                    <h3>Texts, Voice & Video Calls</h3>
-                    <p>You can send one-on-one and group texts, and use<br>international voice and video calls with your friends.</p>
+    </div> -->
+            <div class="MessengerAPP">
+                <div class="MessengerAPPwords">
+                    <h1><span>Messenger APP</span></h1>
+                    <p>New communication app which allows you to make FREE voice calls and<br>
+                        send FREE messages whenever and wherever you are, 24 hours a day!</p>
+                </div>
+                <div class="appscontainer">
+                    <div class="appsitem">
+                        <img src="line official/49fae47e154a66bfea7bfa3559e04483.png">
+                        <div class="text">
+                            <h3>Texts, Voice & Video Calls</h3>
+                            <p>You can send one-on-one and group texts, and use<br>international voice and video calls
+                                with your friends.</p>
+                        </div>
+                    </div>
+
+                    <div class="appsitem">
+                        <img src="line official/e3ba9b4f333191f18c8d467bb6e2b46f.png">
+                        <div class="text">
+                            <h3>Stickers, Emoji, Themes</h3>
+                            <p>You can share you feelings with stickers or emoji,<br>and wrap your app with colorful
+                                themes</p>
+                        </div>
+                    </div>
+
+                    <div class="appsitem">
+                        <img src="line official/d9d770c0876cab6a56cdc4d308abba67.png">
+                        <div class="text">
+                            <h3>OpenChat</h3>
+                            <p>You can meet new friends with similar interests and<br>share fun news and information.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="appsitem">
+                        <img src="line official/49fae47e154a66bfea7bfa3559e04483.png">
+                        <div class="text">
+                            <h3>Hometab</h3>
+                            <p>You can access to various information, services,<br> contents like LINE family services,
+                                stickers, etc.</p>
+                        </div>
+                    </div>
+
+                    <div class="appsitem">
+                        <img src="line official/e3ba9b4f333191f18c8d467bb6e2b46f.png">
+                        <div class="text">
+                            <h3>Timeline</h3>
+                            <p>Exchange stroies with your close friends. You can<br> also find your favorite stories by
+                                "Discover"</p>
+                        </div>
+                    </div>
+
+                    <div class="appsitem">
+                        <img src="line official/d9d770c0876cab6a56cdc4d308abba67.png">
+                        <div class="text">
+                            <h3>Wallet</h3>
+                            <p>Paying or sending money by "LINE Pay", and you<br> can use various LINE financial
+                                services.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <div class="banner2">
+                <h2>Corporate services</h2>
+            </div>
+            <div class="Services">
+                <h3>Services</h3>
+            </div>
+            <div class="Servicescontainer">
+                <div class="Servicesitem one">
+                    <img src="line official/icon-line.png">
+                    <div class="text">
+                        <h3>LINE</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore voluptate fugiat
+                            exercitationem.</p>
+                        <div class="dot">
+                            <p>...</p>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="appsitem">
-                <img src="line official/e3ba9b4f333191f18c8d467bb6e2b46f.png">
-                <div class="text">
-                    <h3>Stickers, Emoji, Themes</h3>
-                    <p>You can share you feelings with stickers or emoji,<br>and wrap your app with colorful themes</p>
+                <div class="Servicesitem">
+                    <img src="line official/9e65a367d93724a6aa21a6e0e0554c5a.png">
+                    <div class="text">
+                        <h3>LINE Antivirus</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <div class="dot">
+                            <p>...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="Servicesitem">
+                    <img src="line official/6b7f1ebf5ce7202904dc0ff6f27624ef.png">
+                    <div class="text">
+                        <h3>LINE Out</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet
+                            consectetur adipisicing elit.</p>
+                        <div class="dot">
+                            <p>...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="Servicesitem">
+                    <img src="line official/icon-line.png">
+                    <div class="text">
+                        <h3>LINE</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore voluptate fugiat
+                            exercitationem.</p>
+                        <div class="dot">
+                            <p>...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="Servicesitem">
+                    <img src="line official/9e65a367d93724a6aa21a6e0e0554c5a.png">
+                    <div class="text">
+                        <h3>LINE Antivirus</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <div class="dot">
+                            <p>...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="Servicesitem">
+                    <img src="line official/6b7f1ebf5ce7202904dc0ff6f27624ef.png">
+                    <div class="text">
+                        <h3>LINE Out</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet
+                            consectetur adipisicing elit.</p>
+                        <div class="dot">
+                            <p>...</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <div class="appsitem">
-                <img src="line official/d9d770c0876cab6a56cdc4d308abba67.png">
-                <div class="text">
-                    <h3>OpenChat</h3>
-                    <p>You can meet new friends with similar interests and<br>share fun news and information.</p>
-                </div>
-            </div>   
-            <div class="appsitem">
-                <img src="line official/49fae47e154a66bfea7bfa3559e04483.png">
-                <div class="text">
-                    <h3>Hometab</h3>
-                    <p>You can access to various information, services,<br> contents like LINE family services, stickers, etc.</p>
-                </div>
-            </div>
-
-            <div class="appsitem">
-                <img src="line official/e3ba9b4f333191f18c8d467bb6e2b46f.png">
-                <div class="text">
-                    <h3>Timeline</h3>
-                    <p>Exchange stroies with your close friends. You can<br> also find your favorite stories by "Discover"</p>
-                </div>
-            </div>
-
-            <div class="appsitem">
-                <img src="line official/d9d770c0876cab6a56cdc4d308abba67.png">
-                <div class="text">
-                    <h3>Wallet</h3>
-                    <p>Paying or sending money by "LINE Pay", and you<br> can use various LINE financial services.</p>
-                </div>
-            </div>   
+            <div class="grayspace"></div>
         </div>
     </div>
-    <div class="banner2">
-        <h2>Corporate services</h2>
-    </div>
-    <div class="Services">
-        <h3>Services</h3>
-    </div>
-    <div class="Servicescontainer">
-        <div class="Servicesitem one">
-            <img src="line official/icon-line.png">
-            <div class="text">
-                <h3>LINE</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore voluptate fugiat exercitationem.</p>
-                <div class="dot"><p>...</p></div>
-            </div>
-        </div>
-
-        <div class="Servicesitem">
-            <img src="line official/9e65a367d93724a6aa21a6e0e0554c5a.png">
-            <div class="text">
-                <h3>LINE Antivirus</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                <div class="dot"><p>...</p></div>
-            </div>
-        </div>
-
-        <div class="Servicesitem">
-            <img src="line official/6b7f1ebf5ce7202904dc0ff6f27624ef.png">
-            <div class="text">
-                <h3>LINE Out</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                <div class="dot"><p>...</p></div>
-            </div>
-        </div>
-        <div class="Servicesitem">
-            <img src="line official/icon-line.png">
-            <div class="text">
-                <h3>LINE</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore voluptate fugiat exercitationem.</p>
-                <div class="dot"><p>...</p></div>
-            </div>
-        </div>
-
-        <div class="Servicesitem">
-            <img src="line official/9e65a367d93724a6aa21a6e0e0554c5a.png">
-            <div class="text">
-                <h3>LINE Antivirus</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                <div class="dot"><p>...</p></div>
-            </div>
-        </div>
-
-        <div class="Servicesitem">
-            <img src="line official/6b7f1ebf5ce7202904dc0ff6f27624ef.png">
-            <div class="text">
-                <h3>LINE Out</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                <div class="dot"><p>...</p></div>
-        </div>
-    </div>
-    </div>
-    <div class="grayspace"></div>
-    <!-- <div class="button">
+</div>
+<!-- <div class="button">
         <img src="line official/icon-line.png">
         <a class="link"href="#"><img src="line official/df59f0017d63e7062a39aa5213438730.png">App Store</a>
         
     </div> -->
 
-    <footer class="footers">
+<!-- <footer class="footers">
         <div class="button">
             <img src="line official/icon-line.png" alt="" id="line">
             <a class="link"href="#"><img src="line official/df59f0017d63e7062a39aa5213438730.png">App Store</a>
@@ -812,7 +810,7 @@
             <a href="#">Privacy Policy</a>
         </div>
 
-    </footer>
+    </footer> -->
 </body>
 
 </html>
