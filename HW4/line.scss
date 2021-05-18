@@ -1,0 +1,877 @@
+
+// *{
+//     outline:1px red solid;
+// }
+body{
+    margin: 0;
+    padding: 0; 
+}
+
+.banner {
+    height: 578px;
+    width: 100%;
+    background-image: url("https://i.ibb.co/kh05PNg/mv01.jpg");
+    background-size: cover;    
+}
+.head-mobile{
+    width: 100%;
+    
+    .moblie-img{
+        float: left;
+        margin: 20px 0px 0px 20px;
+    }
+    .language-mobile{
+        float: right;
+        margin: 20px 20px 0px 0px;
+    }
+    .language-mobile a{
+        font-family: "Segoe UI", "微軟正黑體", sans-serif;
+        text-decoration: none;
+    }
+}
+.slogan-table{
+    display: none;
+}
+.slogan-mobile{
+    position: relative;
+    top: 300px;
+    left: 0px;
+    
+    h1 {
+        font-size: 30px;
+        color: white;
+        font-family: "Segoe UI", "微軟正黑體", sans-serif;
+        font-weight: bolder;   
+        margin: 0px 140px 0px 0px; 
+    }
+    
+     p {
+        font-size: 20px;
+        color: white;
+        font-family: "Segoe UI", "微軟正黑體", sans-serif;
+        margin: 0px 0px 0px 40px;
+       
+    }
+    img {
+        margin: 10px 0px 0px 8px;
+        width: 25px;
+        height: 25px;
+    }
+}
+.download-mobile {
+    position: absolute;
+    top: 450px;
+    left: 40px;
+    // display: flex;
+    a{ 
+        text-decoration: none;
+    }
+    p{
+        font-size: 15px;
+        color: white;
+        font-family: "Segoe UI", "微軟正黑體",sans-serif;
+    }
+}
+
+.download-table{
+    display: none;
+    .download {
+        
+        a{ display: flex;
+            text-decoration: none;
+        }
+        
+        h4 {
+            font-size: 15px;
+            color: white;
+            font-family: "Segoe UI", "微軟正黑體", sans-serif;
+            margin: 73px 0px 0px 10px;
+        }
+    }
+    .DL img {
+        display: inline;
+    }
+    
+    .downloadimage img {
+        margin: 20px 0px 0px 8px;
+        width: 50px;
+        height: 50px;
+        border: 1px solid white;
+        /* display: inline; */
+        float: left;
+    }
+    
+    .downloadimage1 img {
+        margin: 20px 0px 0px 8px;
+        width: 50px;
+        height: 50px;
+        border: 1px solid white;
+        /* display: inline; */
+        float: left;
+    
+    }
+    
+    .downloadimage2 img {
+        margin: 20px 0px 0px 8px;
+        width: 50px;
+        height: 50px;
+        border: 1px solid white;
+        /* display: inline; */
+        float: left;
+    }
+    
+    .bear img {
+        display: none;
+    }
+    
+    .bear1 img {
+        display: none;
+    
+    }
+    
+    .bear2 img {
+        display: none;
+    }
+    
+    .downloadimage:hover .apple img {
+        display: none;
+    }
+    
+    .downloadimage:hover .bear img {
+        display: block;
+    }
+    
+    .downloadimage1:hover .apple1 img {
+        display: none;
+    }
+    
+    .downloadimage1:hover .bear1 img {
+        display: block;
+    }
+    
+    .downloadimage2:hover .apple2 img {
+        display: none;
+    }
+    
+    .downloadimage2:hover .bear2 img {
+        display: block;
+    }
+}
+.head-table{
+    display: none;
+}
+.head-table .container{
+    width: 100%;
+    height: 70px;
+    background-color: white;
+    opacity: .9;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    img{
+        float: left;
+        padding: 35px 10px 10px 20px;
+      }
+    nav {
+        float: right;
+        padding: 10px 40px 0px 20px;
+        position:relative;
+	    left: -24%;  
+        top: 10%;   
+      }
+      ul{
+        margin: 0;
+        list-style-type: none;
+      }
+      nav li{
+        padding: 10px 45px;
+        float: left;
+      }
+      nav a{
+        font-size: 17px;
+        color: black;
+        border-bottom: 4px solid transparent;
+        text-decoration: none;
+        font-family: "Segoe UI", "微軟正黑體", sans-serif;
+        font-weight: bold;
+    }
+    a.active {
+        text-decoration: none;
+        border-bottom: 4px solid black;
+        padding: 10px;
+    }
+    .language{
+        float: right;
+        position:relative;
+	    left: 44%;  
+        top: 40%; 
+    }
+    .language a{
+        font-family: "Segoe UI", "微軟正黑體", sans-serif;
+        text-decoration: none;
+    }
+} 
+
+.words {
+    height: 400px;
+    h2 {
+        font-family: "Segoe UI", "微軟正黑體", sans-serif;
+        font-size: 40px;
+        font-weight: bolder;
+        margin: 50px 0px 50px 0px;
+        text-align: center;
+        /* margin:上 右 下 左; */
+    }
+    p {
+        font-family: "Segoe UI", "微軟正黑體", sans-serif;
+        font-size: 20px;
+        color: rgb(53, 51, 51);
+        text-align: center;
+        line-height: 30px;
+    }
+}
+
+.nav-mobile{
+    background-color: white;
+    position: sticky;
+    top: 10px;
+    nav {
+            display: flex;
+            justify-content: center;
+            padding: 5px 0px 0px 5px;
+            // margin: 0px 0px 0px 20px;
+
+          }
+          ul{
+            margin: 0;
+            list-style-type: none;
+          }
+          nav li{
+            padding: 5px 5px;
+            float: left;
+          }
+          nav a{
+            font-size: 5px;
+            color: black;
+            border-bottom: 4px solid transparent;
+            text-decoration: none;
+            font-family: "Segoe UI", "微軟正黑體", sans-serif;
+            font-weight: bold;
+        }
+        a.active {
+            text-decoration: none;
+            border-bottom: 2px solid black;
+            padding: 5px;
+        }
+
+}
+
+.life-group{
+    display: none;
+    .items {
+        display: flex;
+        position: relative;
+        
+    }
+    .items::before{
+        content:'';
+        position: absolute;
+        width: 9px;
+        height: 9px;
+        border: 1px solid gainsboro;
+        background-color: hotpink;
+        border-radius: 50%;
+        left: 50%;
+        margin-left: -6px;
+    }
+    .items:last-child:after{
+        content: '';
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        border: 1px solid gainsboro;
+        background-color: hotpink;
+        border-radius: 50%;
+        left:50%;
+        bottom: -15px;
+        margin-left: -15px;
+    }
+    .items:nth-child(even){
+        flex-direction: row-reverse;
+    }
+    .items:nth-child(odd) .contents:first-child{
+        border-right:1px dotted rgb(150, 28, 28);
+    }
+    .items:nth-child(even) .contents:first-child{
+        border-left:1px dotted rgb(73, 9, 9);
+    }
+
+    .contents{
+        width: 50%;
+        padding:50px;
+    }
+
+    .contents img{
+        width: 100%;
+    }
+
+    .box1 img{
+        width: 50px;
+        height: 50px;
+        border-radius: 10px;
+        margin: 0px 0px 30px 80px;
+    }
+
+    .box1 p{
+        font-family: "Segoe UI", "微軟正黑體", sans-serif;
+        font-weight: bold;
+        font-size: 15px;
+        // border-bottom: 2px green solid;
+        margin: 13px 3px 5px 3px;
+    }
+
+    .contents h2 {
+        font-family: "Segoe UI", "微軟正黑體", sans-serif;
+        font-size: 30px;
+        font-weight: bolder;
+        margin: 0px 0px 30px 80px;
+    }
+
+    .contents p {
+        font-family: "Segoe UI", "微軟正黑體", sans-serif;
+        font-size: 17px;
+        line-height: 30px;
+        margin: 0px 0px 30px 80px;
+    }
+
+    .contents span {
+        color: green;
+    }
+
+    .box2 {
+        width: 120px;
+        height: 50px;
+        border: 1px solid gray;
+        border-radius: 5px;
+        margin: 0px 0px 30px 80px;
+        padding: 10px 10px 10px 10px;
+        font-family: "Segoe UI", "微軟正黑體", sans-serif;
+        font-size: 15px;
+        text-decoration: none;
+    }
+
+    .box2:hover {
+        background-color: green;
+        color: white;
+    }
+}
+
+.life-group-mobile{
+
+    .contents{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        border-left:1px dotted rgb(73, 9, 9);
+        position: sticky;
+    }
+
+    .contents img{
+        width: 100%;
+    }
+
+    .box1 img{
+        width: 30px;
+        height: 30px;
+        border-radius: 10px;
+        margin: 0px 0px 10px 40px;
+    }
+
+    .box1 p{
+        font-family: "Segoe UI", "微軟正黑體", sans-serif;
+        font-weight: bold;
+        font-size: 15px;
+        // border-bottom: 2px green solid;
+        margin: 13px 3px 5px 3px;
+    }
+
+    .contents h2 {
+        font-family: "Segoe UI", "微軟正黑體", sans-serif;
+        font-size: 15px;
+        font-weight: bolder;
+        margin: 5px 0px 10px 10px;
+    }
+
+    .contents p {
+        font-family: "Segoe UI", "微軟正黑體", sans-serif;
+        font-size: 10px;
+        line-height: 30px;
+        margin: 0px 0px 20px 80px;
+    }
+
+    .contents span {
+        color: green;
+    }
+
+    .box2 {
+        width: 80px;
+        height: 20px;
+        border: 1px solid gray;
+        border-radius: 5px;
+        margin: 0px 0px 50px 80px;
+        // padding: 10px 10px 10px 10px;
+        font-family: "Segoe UI", "微軟正黑體", sans-serif;
+        font-size: 10px;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    .box2:hover {
+        background-color: green;
+        color: white;
+    }
+}
+
+
+.MessengerAPP {
+
+    height: 1200px;
+    background-color: rgb(247, 247, 247);
+    display: none;
+
+    .MessengerAPPwords h1 {
+        font-family: "Segoe UI", "微軟正黑體", sans-serif;
+        font-size: 60px;
+        font-weight: bolder;
+        /* display: block; */
+        padding: 100px 0px 0px 0px;
+        margin: 0px auto 30px auto;
+        text-align: center;
+    }
+    
+    .MessengerAPPwords p {
+        font-family: "Segoe UI", "微軟正黑體", sans-serif;
+        font-size: 20px;
+        color: rgb(53, 51, 51);
+        text-align: center;
+        line-height: 30px;
+        padding: 0px 0px 50px 0px;
+    }
+    
+}
+.MessengerAPP-mobile{
+    background-color: rgb(247, 247, 247);
+
+    .MessengerAPPwords h1 {
+        font-family: "Segoe UI", "微軟正黑體", sans-serif;
+        font-size: 30px;
+        font-weight: bolder;
+        padding: 100px 0px 0px 0px;
+        margin: 0px auto 30px auto;
+        text-align: center;
+    }
+    
+    .MessengerAPPwords p {
+        font-family: "Segoe UI", "微軟正黑體", sans-serif;
+        font-size: 10px;
+        color: rgb(53, 51, 51);
+        text-align: center;
+        line-height: 30px;
+        padding: 0px 0px 50px 0px;
+    }
+}
+
+.appscontainer {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    .appsitem {
+        width: 350px;
+        margin: auto;
+        border: 2px solid none;
+        box-sizing: border-box;
+        flex-wrap: wrap;
+        .text {
+            padding: 10px;
+            h3 {
+                font-family: "Segoe UI", "微軟正黑體", sans-serif;
+                font-size: 25px;
+                font-weight: bold;
+                text-align: center;
+                margin: 20px 0px 20px 0px;
+            }
+            p {
+                font-family: "Segoe UI", "微軟正黑體", sans-serif;
+                font-size: 13px;
+                text-align: center;
+                line-height: 20px;
+            
+            }
+        }
+        img {
+            width: 100%;
+        }
+        
+    }
+}
+
+.banner2 {
+
+    height: 300px;
+    background-image: url("https://i.ibb.co/5czshjV/359aa04b2b1c3f542b3ef32ac68889db.png");
+    background-size: cover;
+    display: flex;
+    h2 {
+        font-size: 50px;
+        color: white;
+        font-family: "Segoe UI", "微軟正黑體", sans-serif;
+        font-weight: bolder;
+        text-align: center;
+        margin: auto;
+    }
+}
+
+.Services {
+    height: 120px;
+    background-color: rgb(247, 247, 247);
+    h3 {
+        font-size: 30px;
+        font-family: "Segoe UI", "微軟正黑體", sans-serif;
+        font-weight: bolder;
+        text-align: center;
+        padding: 60px 0px 0px 0px;
+        margin: auto;
+    }
+}
+
+main{
+    margin: auto;
+    background-color: rgb(247, 247, 247);
+}
+.stickybox{
+    display: none;
+}
+
+.tag{
+    width: 100%;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+    padding: 3px;
+    a{
+        text-decoration: none;
+    }
+    input{
+        display: inline;
+        height: 30px;
+        background-color:#fff;
+        color: #666;
+        border: 1px solid #999;
+        border-radius: 18px;
+        box-sizing: border-box;
+        padding: 0px 12px;
+        font-size: 13px;
+        font-weight: 700;
+    }
+    a:first-child input{
+        background-color: #32cd32;
+        color:#fff;
+        border: 1px solid #32cd32;
+    }
+}
+.Servicescontainer{display: none;}
+
+.Servicescontainer-mobile{
+    display: flex;
+    flex-wrap: wrap;
+    .Servicesitem{
+        margin: 10px;
+        box-sizing: border-box;
+        display: flex;
+        border-bottom: 1px solid rgb(211, 205, 205);
+        img {
+            width: 70px;
+            height: 70px;
+            border-radius: 10px;
+        }
+        h3{
+            margin: 0px 30px 0px 40px;
+        }
+        p{
+            font-size: 14px;
+            font-family: "Segoe UI", "微軟正黑體", sans-serif;
+            margin: 0px 30px 30px 40px;
+        }
+        .dot{
+            display: none;
+        }
+        .down{
+           display: none;
+        }
+    }
+}
+
+
+.grayspace {
+    background-color: rgb(247, 247, 247);
+    height: 100px;
+}
+.footers{
+    display: none;
+}
+.footerslist{
+    display: none;
+}
+
+.footerlist-mobile ul{
+    display: flex;
+    align-items: center;      
+    font-size: 13px;
+    list-style: none;
+    }
+    li{
+    margin: 0 10px;
+    }
+    li:not(:last-child)::after{
+        content:'';
+        border: 0.1px solid #aaa; 
+        position: relative;
+        left:15px;
+        }
+
+   
+
+
+
+@media  screen and (min-width:880px) {
+    .slogan-table{
+        display: block;
+    }
+    .slogan{
+        margin: 70px 0px 0px 180px;
+        width: 800px;
+        h1 {
+            font-size: 140px;
+            color: white;
+            font-family: "Segoe UI", "微軟正黑體", sans-serif;
+            font-weight: bolder;
+            padding: 0px 0px 20px 0px;
+        }
+        p {
+            font-size: 40px;
+            color: white;
+            font-family: "Segoe UI", "微軟正黑體", sans-serif;
+            margin: 0px 0px 0px 8px;
+        }
+        img {
+            margin: 70px 0px 0px 8px;
+            width: 25px;
+            height: 25px;
+        }
+    }
+    .slogan-mobile{display: none;}
+    .words {
+        height: 400px;
+        h2 {
+            font-family: "Segoe UI", "微軟正黑體", sans-serif;
+            font-size: 80px;
+            font-weight: bolder;
+            margin: 300px auto 50px auto;
+            text-align: center;
+            /* margin:上 右 下 左; */
+        }
+    }
+    .download-mobile{
+        display: none;
+    }
+    .download-table{
+        display: block;
+    }
+    .head-mobile{
+        display: none;
+    }
+    .nav-mobile{
+        display: none;}
+    .life-group-mobile{
+        display: none;
+    }
+    .head-table{
+        display: flex;
+    }
+    .life-group{
+        display: block;
+    }
+    .MessengerAPP {
+        display: block;}
+    .MessengerAPP-mobile{
+        display: none;
+    }
+    .Servicescontainer-mobile{
+        display: none;
+    }
+    .Servicescontainer{
+        display: block;
+    }
+    .Services {
+        height: 200px;
+        background-color: rgb(247, 247, 247);
+    }
+    
+.Servicescontainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    
+}
+
+.Services h3 {
+    font-size: 60px;
+    font-family: "Segoe UI", "微軟正黑體", sans-serif;
+    font-weight: bolder;
+    text-align: center;
+    padding: 60px 0px 0px 0px;
+    margin: auto;
+}
+
+.Servicesitem{
+    width: 280px;
+    // height: 400px;
+    background-color:white;
+    margin: 10px;
+    box-sizing: border-box;
+    box-shadow: 3px 3px 16px rgba(0, 0, 0, .3);
+    position: relative;
+}
+.Servicesitem img {
+    width: 70px;
+    height: 70px;
+    margin: 30px 30px 30px 40px;
+    border-radius: 10px;
+}
+.Servicesitem h3{
+    display: inline-block;
+    margin: 0px 30px 20px 40px;
+}
+.Servicesitem p{
+    font-size: 14px;
+    font-family: "Segoe UI", "微軟正黑體", sans-serif;
+    display: inline-block;
+    margin: 0px 30px 30px 40px;
+    text-align: start;
+}
+.dot{
+    font-size: 30px;
+    font-family: "Segoe UI", "微軟正黑體", sans-serif;
+    display: inline-block;
+    margin: 60px 50px 20px 5px;
+    text-align: start;
+}
+.overlay{
+    background-color: rgba(0, 0, 0, .5);
+    width: 100%;
+    height: 100%;
+    top:0;
+    position: absolute;
+    display: none;
+}
+.Servicesitem:hover .overlay{
+    display: block;
+}
+.down{
+    border: 2px white solid;
+    color: white;
+    font-size: 10px;
+    padding: 20px;
+    font-family: "Segoe UI", "微軟正黑體", sans-serif;
+    position: relative;
+    top: 50%;
+    left: 35%;
+}
+
+main{
+    margin: auto;
+    display: flex;
+    background-color: rgb(247, 247, 247);
+}
+.stickybox{
+    display: block;
+}
+.stickybox .box4{
+    position: sticky;
+    top: 70px;
+    left: 0px;
+
+}
+.stickybox .box3{
+    margin: 50px;
+    padding: 20px 10px 20px 10px;
+}
+
+
+
+.tag{
+    display: none;
+}
+
+.footers{
+    display: block;
+} 
+.footer-mobile{
+    display: none;
+}
+.footerslist{
+    display: flex;
+}
+    
+    
+footer img {
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    border-radius: 10px;
+    
+}
+
+footer{
+    box-sizing: border-box;
+    min-width: 800px;
+    width: 100%;      
+    padding:0 20px;
+    }
+footer div{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;      
+    height: 60px;
+    max-width: 1200px;
+    padding:20px 0;
+    margin: 0 auto 0;
+    }
+footer div:not(:last-child){      
+    border-bottom: 1px solid #ddd;
+    }
+footer ul{
+    display: flex;
+    align-items: center;      
+    font-size: 13px;
+    list-style: none;
+    }
+    footer ul li{
+    margin: 0 14px;
+    }
+    footer ul li:not(:last-child)::after{
+    content:'';
+    border: 0.1px solid #aaa; 
+    position: relative;
+    left:15px;
+    }
+    .grayspace {
+        background-color: rgb(247, 247, 247);
+    
+        height: 200px;
+    }
+   
+}
+
