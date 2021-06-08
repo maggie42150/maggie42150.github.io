@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+</head>
+<body>
+    <div class="jumbotron bg-info">
+        <h1 class="text-center text-light">台灣水庫即時水情</h1>
+    </div>
+
+    <div class="container" id="container">
+        
+    </div>
+
+
+    <script>
+        let Titles=['項目','水庫名稱 Name','有效蓄水量 Capacity','剩餘百分比 Percent'];
+
+        let TaiwanReservoir=[
+            {name:'寶山水庫(新竹)',Capacity:'142.39萬立方公尺',Percent:'28.2%'},
+            {name:'日月潭水庫(南投)',Capacity:'6573.65萬立方公尺',Percent:'51.3%'},
+            {name:'烏山頭水庫(台南)',Capacity:'4744.00萬立方公尺',Percent:'60.3%'},
+            {name:'曾文水庫(嘉義、台南)',Capacity:'7019.00萬立方公尺',Percent:'17.3%'},
+        ];
+
+        let container =document.getElementById("container");
+        let table=document.createElement("table");
+        let thead= document.createElement("thead");
+        let tbody= document.createElement("tbody");
+        table.setAttribute("class", "table table-bordered table-striped table-white");
+
+
+        window.onload=function(){
+            //建立table內容
+            createTable(Titles,TaiwanReservoir);
+
+            container.appendChild(table);
+        }
+
+        function createTable(title,rowsArray){
+
+        AddRow(thead,Titles);
+        rowsArray.forEach(function(item,index){
+            let arr = [index+1,item.name,item.Capacity, item.Percent];
+            
+             AddRow(tbody,arr);
+        })
+    };
+
+        function AddRow(target,rowData){
+        let _row=document.createElement('tr'); //先創造出一行(row)
+
+        rowData.forEach(function(col){
+            let td = document.createElement('td'); //創造出一格
+            td.innerText=col; 
+            _row.appendChild(td); //將以帶有文字的格放入該行中
+        });
+        target.appendChild(_row);  //在tbody or thead放入該行
+        table.appendChild(target); //在table 中放入該行tbody or thead
+        
+        }
+
+    </script>
+</body>
+</html>
