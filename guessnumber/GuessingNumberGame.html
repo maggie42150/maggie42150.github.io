@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            box-sizing: border-box;
+        }
+        .game{
+            width: 200px;
+            height: 300px;
+            background-color: cadetblue;
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            padding-top:30px;
+            color: white;
+            
+        }
+        .gamecontent{
+            position: absolute;
+            margin-top: 40px;
+            
+        }
+        .startguess{
+            width: 167px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="game">終極密碼(0~100) 
+        <div class="gamecontent">
+        <!-- <input id="number"> -->
+        <input id="number" type="number" oninput="if(value>100)value=100"/>
+        <button class="startguess">開始</button>
+        <div class="hint">系統說明:</div>
+        <button class="restart">再玩一次</button>
+        </div>
+        
+    </div>
+
+
+    <script>
+        
+        let startguess = document.querySelector('.startguess');
+        let numberinput=document.getElementById("number");
+        numberinput.disabled=true;
+        let hint =document.querySelector('.hint');
+        let restart =document.querySelector('.restart');
+        let answer;
+        let min;
+        let max;
+        let start=1;
+        startguess.addEventListener('click',function(event){
+            if (start){
+                numberinput.disabled=false;
+                answer =getRandom(0,100);
+                startguess.innerText="猜猜看";
+                start=0;
+            }
+            else{
+                let guessnumber = numberinput.value;
+                let guessnumbertoInt = parseInt(guessnumber);
+
+                if(guessnumbertoInt==answer)
+                {
+                    numberinput.disabled=true;
+                    hint.innerText="系統說明:恭喜答對了";
+                }
+                else{
+                        if(guessnumbertoInt>answer){
+                        min = 0;
+                        max =guessnumbertoInt-1;
+                        hint.innerText=`系統說明:猜錯囉!介於${min}到${max}之間`;}
+                        else{
+                        min =guessnumbertoInt+1;
+                        max =100;
+                        hint.innerText=`系統說明:猜錯囉!介於${min}到${max}之間`;
+                        }
+                }
+            }
+        });
+
+        function getRandom(min,max){
+            return Math.floor(Math.random()*(max-min)+min);
+        };      
+
+        restart.addEventListener('click',function(event){
+            startguess.innerText="開始";
+            hint.innerText="系統說明:";
+            numberinput.value="";
+            numberinput.disabled=true;
+            start=1;
+        })
+        
+    </script>
+</body>
+
+
+
+</html>
