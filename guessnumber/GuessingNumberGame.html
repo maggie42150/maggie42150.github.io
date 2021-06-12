@@ -39,7 +39,7 @@
     <div class="game">終極密碼(0~100) 
         <div class="gamecontent">
         <!-- <input id="number"> -->
-        <input id="number" type="number" oninput="if(value>100)value=100"/>
+        <input id="number" type="number" oninput="if(value>100)value=100;if(value<0)value=0"/>
         <button class="startguess">開始</button>
         <div class="hint">系統說明:</div>
         <button class="restart">再玩一次</button>
