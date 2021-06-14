@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            box-sizing: border-box;
+        }
+        .main{
+            width: 380px;
+            background-color: rgb(70, 64, 64);
+            margin:auto;
+            margin-top: 10px;
+
+        }
+        .process{
+            height: 50px;
+            background-color: rgb(95, 92, 92);
+            font-size: 25px;
+            color:rgb(189, 183, 183);
+            overflow: hidden;
+            text-align:right;
+  
+        }
+        .showbox{
+            height: 70px;
+            background-color: rgb(95, 92, 92);
+            font-size: 55px;
+            color:white;
+            text-align:right;
+            overflow: hidden;
+        }
+        .pinter{
+            padding-left: 10px;
+        }
+
+        button{
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            font-size: 45px;
+            color:white;
+            border: 3px solid white;
+            background-color: transparent;
+            margin: 5px;
+        }
+        .equal{
+            width: 170px;
+            border-radius: 220px;
+            border: 3px solid rgb(66, 186, 192);
+            color:rgb(66, 186, 192);
+        }
+        .cal{
+            font-size: 35px;
+            border: 3px solid rgb(66, 186, 192);
+            color:rgb(66, 186, 192);
+        }
+        .reset{
+            font-size: 35px;
+            border: 3px solid rgb(66, 186, 192);
+            color:rgb(66, 186, 192);
+        }
+        .percent{
+            font-size: 35px;
+            border: 3px solid rgb(66, 186, 192);
+            color:rgb(66, 186, 192);
+        }
+        .changeSign{
+            font-size: 35px;
+            border: 3px solid rgb(66, 186, 192);
+            color:rgb(66, 186, 192);
+        }
+        .number:hover {
+            background-color: rgb(66, 186, 192);
+            cursor: pointer; 
+        }
+
+        .cal:hover {
+            background-color: white;
+            cursor: pointer; 
+        }
+        .reset:hover {
+            background-color: white;
+            cursor: pointer; 
+        }
+        .equal:hover{
+            background-color: white;
+            cursor: pointer; 
+        }
+        .percent:hover{
+            background-color: white;
+            cursor: pointer; 
+        }
+        .changeSign:hover{
+            background-color: white;
+            cursor: pointer; 
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <div class="main"> 
+        <div class="show">
+            <div class="process"></div>
+            <div class="showbox"></div>
+        </div>
+        
+        <div class="pinter">
+            <button class="reset">AC</button>
+            <button class="changeSign">+/−</button>
+            <button class="percent">%</button>
+            <button class="cal">÷</button>
+            <button class="number">7</button>
+            <button class="number">8</button>
+            <button class="number">9</button>
+            <button class="cal">×</button> 
+            <button class="number">4</button>
+            <button class="number">5</button>
+            <button class="number">6</button>
+            <button class="cal">−</button>
+            <button class="number">1</button>
+            <button class="number">2</button>
+            <button class="number">3</button>
+            <button class="cal">+</button>
+            <button class="number">0</button>
+            <button class="number">.</button>
+            <button class="equal">=</button>
+        </div>
+    </div>
+        
+
+    <script>
+
+        let showbox=document.querySelector('.showbox');
+        let process=document.querySelector('.process');
+
+        let previous = 0;
+        let uncompile = 0; //前前一個數字
+        let lastop= '='; //最新的符號
+        let clear = 0; //等於0為false時，為連續輸入數字；等於1為true，表示前面的數字為計算後的數字不能直接放數字
+        let continue_op = 0; //連續兩個符號,當等於1時true，代表有兩個相連的符號
+        const number = document.querySelectorAll('.number');
+        number.forEach((num)=>{num.addEventListener('click', function(event){
+            if(clear==1) {
+                showbox.innerText= "";
+                clear = 0;
+            }
+            showbox.innerText+= num.innerText;
+            process.innerText+= num.innerText;
+            continue_op = 0;
+        })});
+        const changeSign = document.querySelectorAll('.changeSign');
+        changeSign.forEach((c)=>{c.addEventListener('click', function(event){
+            result = parseFloat(showbox.innerText)*(-1);
+            process.innerText = process.innerText.slice(0,-1) + result;
+            showbox.innerText = result;
+        })});
+        const cal = document.querySelectorAll('.cal');
+
+        cal.forEach((c)=>{c.addEventListener('click', function(event){
+            if(continue_op==1){
+                process.innerText= process.innerText.slice(0,-1)+c.innerText;
+                lastop = c.innerText
+            }
+            else{
+                uncompile = previous;
+                previous =showbox.innerText;
+                calculator();//equal
+                previous = showbox.innerText;
+                if(lastop!="=") //8+5+ 兩個計算符號間沒有按等號
+                {   showbox.innerText= previous;
+                    clear = 1;
+                }
+                else showbox.innerText = "";
+
+                process.innerText+= c.innerText; 
+                lastop = c.innerText;
+            }
+
+
+            continue_op = 1;
+            
+            
+        })});
+        
+        const reset = document.querySelector('.reset');
+        reset.addEventListener('click', function(event){
+            showbox.innerText= "";
+            process.innerText= "";
+            previous = 0;
+            uncompile = 0;
+            lastop= '=';
+            clear = 0;
+            continue_op = 0;
+        });      
+
+         const percent =document.querySelector('.percent');
+         percent.addEventListener('click',function(event){
+            result = parseFloat(showbox.innerText)/100;
+            process.innerText = process.innerText+ "%";
+            showbox.innerText= `${result}`;
+         });
+
+
+        const equal = document.querySelector('.equal');
+        equal.addEventListener('click', function(event){
+            let result;
+            if(lastop=='+'){
+                    if(previous=="")
+                        result = 0+parseFloat(showbox.innerText);
+                    else
+                        result = parseFloat(previous)+parseFloat(showbox.innerText);
+            }
+            else if(lastop=='−'){
+                if(previous=="")
+                        result = 0-parseFloat(showbox.innerText);
+                    else
+                        result = parseFloat(previous)-parseFloat(showbox.innerText);
+            }
+            else if(lastop=='×'){
+                if(lastop=='')
+                        result = 0*parseFloat(showbox.innerText);
+                    else
+                        result = parseFloat(previous)*parseFloat(showbox.innerText);
+            }
+            else if(lastop=='÷'){
+                if(previous=="")
+                        result = 0/parseFloat(showbox.innerText);
+                    else
+                        result = parseFloat(previous)/parseFloat(showbox.innerText);
+            }
+            showbox.innerText= `${result}`;
+            lastop='=';
+        });            
+        function calculator(){
+            let result;
+            if(lastop=='+'){
+                    if(previous=="")
+                        result = 0+parseFloat(previous);
+                    else
+                        result = parseFloat(uncompile)+parseFloat(previous);
+            }
+            else if((lastop=='−')){
+                if(previous=="")
+                        result = 0-parseFloat(previous);
+                    else
+                        result = parseFloat(uncompile)-parseFloat(previous);
+            }
+            else if(lastop=='×'){
+                if(previous=="")
+                        result = 0*parseFloat(previous);
+                    else
+                        result = parseFloat(uncompile)*parseFloat(previous);
+            }
+            else if(lastop=='÷'){
+                if(previous=="")
+                        result = 0/parseFloat(previous);
+                    else
+                        result = parseFloat(uncompile)/parseFloat(previous);
+            }
+            else if(lastop=='='){
+
+                result=previous;
+            }
+            showbox.innerText= `${result}`;
+
+
+        }
+
+
+    </script>
+
+</body>
+</html>
