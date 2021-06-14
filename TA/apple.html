@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <title>Apple</title>
+    <style>
+        /* nav{
+            
+        } */
+        .main{
+            display: flex;
+            flex-wrap: wrap;
+            /* position: relative; */
+        }
+        
+        #photo img{
+          width: 100%;
+        }
+        #choice{
+          margin: auto;
+    
+        }
+        ul{
+          display: flex;
+          flex-wrap: wrap; 
+          list-style:none;
+        }
+        li{
+          /* padding-left:10px; */
+          margin: auto;
+        }
+        .mini{
+          display: block;
+          display: flex;
+          flex-wrap: wrap; 
+          border-radius: 20px;
+          margin-bottom: 20px;
+        }
+        .twelve{
+          display: block;
+          display: flex;
+          flex-wrap: wrap; 
+          border-radius: 20px;
+        }
+
+       /* #space{
+         width: 180px;
+       } */
+       /* h3{
+         padding-top: 20px;
+         margin-bottom: 1px;
+     
+       } */
+      
+       .mini p{
+        margin-top: 1px;
+
+       }
+       #model12{
+         padding-right: 60px;
+         padding-bottom: 5px;
+       }
+        /* .type{
+            width: 400px;
+            height: 60px;
+        }  */
+        .line{
+
+          margin: 10px;
+          border: 1px solid cadetblue;
+          width: 300px;
+        }
+        .color img{
+          width: 80px;
+          height: 80px;
+        } 
+        .color{
+          border-radius: 20px;  
+        }
+        .price{
+          font-size: 30px;
+        }
+        /* .color2{
+          display: block;
+          display: flex;
+          flex-wrap: wrap; 
+          border-radius: 20px;  
+        }
+        .color3{
+          display: block;
+          display: flex;
+          flex-wrap: wrap; 
+          border-radius: 20px;
+        }  */ 
+
+    </style>
+  </head>
+  <body>
+   
+    <nav>
+        <ul>
+            <li><a class="active" href="#">iPhone 12</a></li>
+            <li><a href="#">iPad</a></li>
+            <li><a href="#">TV</a></li>
+        </ul>
+    </nav>
+      <div class="main">
+        <div class="col-12 col-md-6" id="photo">
+            <img src="photo/iphone-12-purple-select-2021.png">
+        </div>
+       
+        <div class="col-12 col-md-6" id="choice">     
+        <h1>Buy iPhone 12</h1>
+        <p>Get up to $80 - $525 by trading in iPhone 7 or <br>newer*
+            See how trade-in works<br> 
+            Choose your model.<br> 
+            Which model is right for you?</p>
+        <button class="mini"><div><h3>iPhone 12 mini</h3><br><div id="pp">5.4-inch display</div></div><div id="space"></div>
+          <div>From$699<br>or $29.12/mo.<br>before trade-in</div></button>
+        <button class="twelve"><div id="model12">iPhone 12<br>5.4-inch display</div><div>From$799<br>or $33.29/mo.<br>before trade-in</div></button>
+        <div class="line"></div>
+
+        <p>Choose your finish.</p>
+        <div class="color">
+          <div class="color1" ><button><img src="photo/finish-white-202010.jfif"><br>white</button><button><img src="photo/finish-black-202010.jfif"><br>black</button></div>
+          <div class="color2"><button><img src="photo/finish-blue-202010.jfif"><br>blue</button><button><img src="photo/finish-green-202010.jfif"><br>green</button></div>
+          <div class="color3"><button><img src="photo/finish-purple-202104.jfif"><br>purple</button><button><img src="photo/finish-red-202010.jfif"><br>red</button></div>
+        </div>
+        <div class="price"></div>
+
+        </div>
+      </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script>
+      let mini = document.querySelector(".mini");
+      let twelve = document.querySelector(".twelve");
+      let color = document.querySelector(".color");
+      let color1 = document.querySelector(".color1");
+      let color2 = document.querySelector(".color2");
+      let color3 = document.querySelector(".color3");
+      let price = document.querySelector(".price");
+      let photo=document.querySelector("#photo");
+      let current;
+      let colorPrice;
+      let final;
+
+      
+
+      mini.addEventListener('click',function(event){
+        current=699;
+        // photo.innerHTML='<img src='photo/finish-green-202010.jfif'>";
+        // // attr("src","photo/finish-green-202010.jfif")
+        // x.innerHTML="<img src='https://mdc.dyu.edu.tw/rwd/images/mdc_title.png'><p>大葉多媒</p>"; 
+      })
+
+      twelve.addEventListener('click',function(event){
+        current=799;
+      })
+
+      color1.addEventListener('click',function(event){
+        colorPrice=0;
+        final=current+colorPrice;
+        price.innerText=`Total:${final}`;
+      })
+
+      color2.addEventListener('click',function(event){
+        colorPrice=60;
+        final=current+colorPrice;
+        price.innerText=`Total:${final}`;
+      })
+
+      color3.addEventListener('click',function(event){
+        colorPrice=100;
+        final=current+colorPrice;
+        price.innerText=`Total:${final}`;
+      })
+
+
+
+
+    </script>
+
+
+  </body>
+</html>
