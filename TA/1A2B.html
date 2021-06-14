@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猜數字(?A?B)</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <style>
+    .myinput{
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <div class="bg-danger">
+        <h3 class="text-center text-light">猜數字(?A?B)</h3>
+    </div>
+
+    <div class="container" id="container">
+        
+    </div>
+    <div class="myinput">
+        <!-- <input> -->
+        <input id="number" type="number" oninput="if(value.length>4)value=value.slice(0,4)" />
+        <button class="btn-guess">我猜!</button>
+        <button class="btn-reset">reset</button>
+    </div>
+   
+    <script>
+
+
+
+        let Titles=['您猜的數字','?A?B'];
+        let guess;
+        let numberAB;
+        let guessnumber = [];
+        var list;
+        let input;
+        let As;
+        let Bs;
+        let times = 0;
+        answer();
+         
+        let button=document.querySelector(".btn-guess");
+        let last=[input,button];
+        let container =document.getElementById("container");
+        let table=document.createElement("table");
+        let thead= document.createElement("thead");
+        let tbody= document.createElement("tbody");
+        table.setAttribute("class", "table table-bordered table-striped table-white");
+      
+        window.onload=function(){
+            //建立table內容
+            createTable(Titles,guessnumber);
+
+            container.appendChild(table);
+        }
+
+  
+        // let guessnumber=[2359,'1A3B'];
+
+
+        
+        button.addEventListener('click',function(){
+            input= document.getElementById("number");
+            guess = input.value.split('');
+            var repeat1 = guess.filter((x,idx,arr)=>{return arr.indexOf(x)!==idx});
+            if(input.value.length==4&&repeat1.length==0&&times<6){
+            calA();
+            calB();
+            let result = `${As}A${Bs}B`;
+            guessnumber=[
+            `${input.value}`,result];
+            AddRow(tbody,guessnumber);
+            times++;
+            }
+            else if(input.value.length!=4)alert(`input lenght should be 4`);
+            else if(repeat1.length!=0)alert(`input should not be repeated`);
+            else alert(`Game over!`);
+            
+            input.value = '';
+
+        });
+
+        let reset=document.querySelector(".btn-reset");
+        reset.addEventListener('click',function(){
+            answer();
+            times = 0;
+            //tbody.remove();
+            while(tbody.rows.length)
+            {
+                tbody.deleteRow(0);
+            }
+            input.value = '';
+
+            //guessnumber = [];
+            //createTable(Titles,guessnumber);
+
+        
+        });
+
+
+
+        function createTable(title,rowsArray){
+
+        AddRow(thead,Titles);
+        // rowsArray.forEach(function(item){
+            AddRow(tbody,guessnumber);
+         
+    };
+
+        function AddRow(target,rowData){
+        let _row=document.createElement('tr'); //先創造出一行(row)
+
+        rowData.forEach(function(col){
+            let td = document.createElement('td'); //創造出一格
+            td.innerText=col; 
+            _row.appendChild(td); //將以帶有文字的格放入該行中
+        });
+        target.appendChild(_row);  //在tbody or thead放入該行
+        table.appendChild(target); //在table 中放入該行tbody or thead
+        
+        }
+        function getRandom(min,max){
+            return Math.floor(Math.random()*(max-min)+min);
+        };    
+        function answer(){
+            list = [];
+            while(list.length<4)
+            {
+                random = getRandom(0,10);
+                if(list.every((x)=>{return x!=random}))
+                    list.push(random);
+            }
+            
+        }  ;
+        function calA(){
+
+            As = 0;
+            if(guess[0]==list[0])
+                As=As+1;
+            if(guess[1]==list[1])
+                As=As+1;
+            if(guess[2]==list[2])
+                As=As+1;     
+            if(guess[3]==list[3])
+                As=As+1;                      
+        }  ;
+        function calB(){
+            let BsTmp = As;
+            Bs = list.some((x)=>{return x==guess[0]})+list.some((x)=>{return x==guess[1]})+list.some((x)=>{return x==guess[2]})+list.some((x)=>{return x==guess[3]})-BsTmp;
+
+}  ;
+
+    </script>
+</body>
+</html>
