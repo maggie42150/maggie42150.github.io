@@ -1,0 +1,173 @@
+<html>
+
+<head>
+    <title>Lorem ipsum dolo</title>
+    <style>
+        body {
+           font-family: Tahoma, Geneva, sans-serif;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .chart {
+            position: relative;
+            width: 501px;
+            height: 251px;
+        }
+
+        .hold {
+            position: absolute;
+            width: 201px;
+            height: 201px;
+            clip: rect(0px, 201px, 201px, 100px);
+            left: 301px;
+        }
+
+        .Pizza {
+            position: absolute;
+            width: 201px;
+            height: 201px;
+            clip: rect(0px, 100px, 201px, 0px);
+            border-radius: 100px;
+        }
+        /* .Pizza.active{
+            border: soild 5px red;
+            box-shadow: 0 0 20px red;
+            transition: 0s;
+        } */
+    </style>
+</head>
+
+<body>
+    <style>
+        style>.PizzaContainer {
+            height: 100px;
+            width: 100px;
+            float: right;
+            margin: 0 0 21px 21px;
+        }
+
+        #PizzaSliceYellow .Pizza {
+            background-color: rgb(223, 218, 160);
+            transform: rotate(60deg);
+        }
+
+        #PizzaSliceBlue {
+            transform: rotate(60deg);
+        }
+
+        #PizzaSliceBlue .Pizza {
+            background-color: rgb(172, 172, 224);
+            transform: rotate(60deg);
+        }
+
+        #PizzaSliceRed {
+            transform: rotate(120deg);
+        }
+
+        #PizzaSliceRed .Pizza {
+            background-color: rgb(224, 204, 204);
+            transform: rotate(60deg);
+        }
+
+        #PizzaSliceOlive {
+            transform: rotate(180deg);
+        }
+
+        #PizzaSliceOlive .Pizza {
+            background-color: rgb(228, 161, 202);
+            transform: rotate(60deg);
+        }
+
+        #PizzaSliceOrange {
+            transform: rotate(240deg);
+        }
+
+        #PizzaSliceOrange .Pizza {
+            background-color: rgb(226, 200, 150);
+            transform: rotate(60deg);
+        }
+
+        #PizzaSliceLime {
+            transform: rotate(300deg);
+        }
+
+        #PizzaSliceLime .Pizza {
+            background-color: rgb(122, 179, 157);
+            transform: rotate(60deg);
+        }
+
+        .Pizza.active{
+            border: soild 5px rgb(226, 241, 14);
+            box-shadow: 0 0 90px rgb(233, 236, 29);
+            transition: 0s;
+        }
+    </style>
+    <div class="PizzaContainer">
+        <div class="PizzaBackground"></div>
+        <div id="PizzaSliceYellow" class="hold">
+            <div class="Pizza"></div>
+        </div>
+        <div id="PizzaSliceBlue" class="hold">
+            <div class="Pizza"></div>
+        </div>
+        <div id="PizzaSliceRed" class="hold">
+            <div class="Pizza"></div>
+        </div>
+        <div id="PizzaSliceOlive" class="hold">
+            <div class="Pizza"></div>
+        </div>
+        <div id="PizzaSliceOrange" class="hold">
+            <div class="Pizza"></div>
+        </div>
+        <div id="PizzaSliceLime" class="hold">
+            <div class="Pizza"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">  <button class="btn btn-primary w-100">start</button></div>
+    <div class="col-10 m-auto"><p id="msg" class="m-0"></p></div>
+    </div>
+    <script>
+    let steps=0; //剩下要走的步數
+    let allSteps=0; //全部的步數
+    let currentIndex=0; //目前要走到哪一步
+    let speed;//速率(越大越慢)
+
+    let colorslice = document.querySelectorAll('.Pizza');
+    
+    document.querySelector('button').addEventListener('click',function(){
+        speed=100;
+        let random=Math.floor(Math.random()*colorslice.length)+1
+        
+        steps=random+(colorslice.length);
+        allSteps=steps;
+        //currentIndex = 0;
+        turnAround();
+    });
+
+    function turnAround(){
+        colorslice[currentIndex].classList.remove('active');
+        currentIndex++;
+
+        if(currentIndex>=colorslice.length)currentIndex=0;
+
+        colorslice[currentIndex].classList.add('active');
+        steps--;
+
+        if(steps>0){
+                setTimeout(turnAround,speed);
+            }
+            else{
+                //跑完了
+                let msgBox=document.getElementById('msg');
+                msgBox.innerText=`今日幸運色->`;
+            }
+    }
+
+    </script>
+</body>
+
+</html>
